@@ -19,7 +19,8 @@ import java.util.concurrent.Future;
 public class AsynchronousImpl {
     public static Random random = new Random();
 
-    @Async("taskExecutor")
+    //@Async("taskExecutor")
+    @Async
     public Future<String> doRaskOne() throws InterruptedException {
         log.info("start task 1");
         long start = System.currentTimeMillis();
@@ -29,7 +30,8 @@ public class AsynchronousImpl {
         return new AsyncResult<>("task 1 success");
     }
 
-    @Async("taskExecutor")
+    //@Async("taskExecutor")
+    @Async
     public Future<String> doRaskTwo() throws InterruptedException {
         log.info("start task 2");
         long start = System.currentTimeMillis();
@@ -39,7 +41,8 @@ public class AsynchronousImpl {
         return new AsyncResult<>("task 2 success");
     }
 
-    @Async("taskExecutor")
+    //@Async("taskExecutor")
+    @Async
     public Future<String> doRaskThree() throws InterruptedException {
         log.info("start task 3");
         long start = System.currentTimeMillis();

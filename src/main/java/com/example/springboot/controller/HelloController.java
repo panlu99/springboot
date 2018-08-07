@@ -7,13 +7,19 @@
 package com.example.springboot.controller;
 
 import com.example.springboot.error.MyException;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
-@Controller
+@RestController
 public class HelloController {
+
     @RequestMapping("/json")
     public String json() throws MyException {
         throw new MyException("发生错误...");
+    }
+
+    @RequestMapping(value = "/hello", method = RequestMethod.GET)
+    @ResponseBody
+    public String hello(@RequestParam String name) {
+        return "hello" + name;
     }
 }
